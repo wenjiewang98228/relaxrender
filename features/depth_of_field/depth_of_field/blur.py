@@ -6,6 +6,7 @@ from numpy import *
 #img : the numpy array of picture
 #dimg：the picture array with depth
 #L1 : front depth of field   L2 : back depth of field
+#sigma : the degree of blurring of image
 def blur(img,dimg,L1 = 1,L2 = 10):
 	img1 = zeros(img.shape)
 	for i in range(3):
