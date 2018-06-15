@@ -11,6 +11,9 @@ def depth(path):
 	img = misc.imread(path)
 	dimg = misc.imread(path)
 	dimg = dimg[:, :, :, np.newaxis]
+	"""
+	add depth dimension
+	"""
 	rows, cols, a = img.shape
 	for k in range(0, 300, 1):
 		for j in range(cols):
