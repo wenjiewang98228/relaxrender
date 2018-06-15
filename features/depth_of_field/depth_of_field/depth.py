@@ -19,10 +19,10 @@ def depth(path, high):
 	rows, cols, a = img.shape
 	for k in range(0, high, 1):
 		for j in range(cols):
-			dimg[k, j, 0] = 5
+			dimg[k, j, 0] = 20
 	for k in range(high, rows, 1):
 		for j in range(cols):
-			dimg[k, j, 0] = 20
+			dimg[k, j, 0] = 5
 #	img2 = bl.blur(img, dimg)
 #	plt.imshow(img2)
 #	plt.show()
