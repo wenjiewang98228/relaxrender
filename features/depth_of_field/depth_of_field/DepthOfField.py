@@ -8,8 +8,11 @@ import os
 from sys import argv
 from scipy import misc
 
-#  get the picture path and use functions to work
-#  the statements in the code is the function to complete
+'''
+get the picture path and use functions to work
+the statements in the code is the function to complete
+'''
+
 def DepthOfField(i_path):
 	dimg = de.depth(i_path[1])
 	fimg = blur_factor.blur_factor(dimg)
@@ -19,9 +22,9 @@ def DepthOfField(i_path):
 	'''
 	# image_depth = de.depth(i_path[1],300)
 	# img = misc.imread(i_path[1])
-#   factor = blf.blur_factor()
+        # factor = blf.blur_factor()
 	after = bl.blur(img,fimg)
-#  	after = bl.blur(img,image_depth,factor)
+        # after = bl.blur(img,image_depth,factor)
 	plt.imshow(after)
 	plt.show()
 	# show the picture after process
