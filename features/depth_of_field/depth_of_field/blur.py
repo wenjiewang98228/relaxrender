@@ -2,13 +2,16 @@ import matplotlib.pyplot as plt
 from scipy import misc
 from scipy import ndimage
 from numpy import *
+
 """
 blur the part of image that is out of DOF range
 """
-#img : the numpy array of picture
-#dimg：the picture array with depth
-#L1 : front depth of field   L2 : back depth of field
-#sigma : the degree of blurring of image
+
+# img : the numpy array of picture
+# dimg：the picture array with depth
+# L1 : front depth of field   L2 : back depth of field
+# sigma : the degree of blurring of image
+
 def blur(img,dimg,sigma=5,L1 = 1,L2 = 10):
 	img1 = zeros(img.shape)
 	for i in range(3):
