@@ -30,13 +30,12 @@ def depth(img):
 	calculate depth according to the distance between pix and the centralself.
 	maximum 200
 	'''
-	'''												    
-	for k in range(0, high, 1):
-		for j in range(cols):
-	 		dimg[k, j, 0] = 20
-	for k in range(high, rows, 1):
-		for j in range(cols):
-			dimg[k, j, 0] = 5
-	'''												    
+													    
+	# for k in range(0, high, 1):
+	#	for j in range(cols):
+	# 		dimg[k, j, 0] = 20
+	# for k in range(high, rows, 1):
+	#	for j in range(cols):
+	#		dimg[k, j, 0] = 5												    
 
 	return dimg
