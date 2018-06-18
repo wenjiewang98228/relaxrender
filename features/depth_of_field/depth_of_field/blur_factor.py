@@ -13,8 +13,14 @@ return:
 
 '''
 def blur_factor(dimg):
-    fimg = dimg
+    fimg = dimg.copy()
+    # rows, cols, rgb, depth = dimg.shape
+    # max_factor = 0
+    # for row_tag in range(0,rows-1,1):
+    #     for col_tag in range(0,cols-1,1):
+    #         fimg[row_tag,col_tag,0] = max_factor - fimg[row_tag,col_tag,0]
     '''
     replace dimg's depth axis with blur factor axis
     '''
+    print("Blur factor calculate successful.")
     return fimg

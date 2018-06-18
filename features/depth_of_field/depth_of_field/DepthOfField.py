@@ -4,6 +4,7 @@ import depth_of_field.blur_factor as blur_factor
 import matplotlib.pyplot as plt
 import sys
 import os
+import time
 #import blur_factor as blf
 from sys import argv
 from scipy import misc
@@ -14,7 +15,11 @@ the statements in the code is the function to complete
 '''
 
 def DepthOfField(i_path):
-	dimg = de.depth(i_path[1])
+
+	start = time.clock()#timing the program
+
+	img = misc.imread(i_path[1])
+	dimg = de.depth(img)
 	fimg = blur_factor.blur_factor(dimg)
 	'''
 	dimg is image with depth axis
@@ -28,6 +33,8 @@ def DepthOfField(i_path):
 	plt.imshow(after)
 	plt.show()
 	# show the picture after process
+	elapsed = (time.clock() - start)
+	print("Time used:",elapsed,)
 
 if __name__ == '__main__':
 	start(sys.argv)
