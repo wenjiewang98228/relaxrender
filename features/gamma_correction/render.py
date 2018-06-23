@@ -11,11 +11,11 @@ gamma 函数
 import numpy as np
 
 def gamma_correction(img,gamma=2.2,funs=1,plot=0,save=0,saveFileName = 'gamma'):
-	# 图片预处理
+	# 图片预处理 
     xmax = img.max()
     x = img/img.max()
 
-    # 处理函数选择
+    # 选择处理函数
     if funs == 1:
         img_new = x**gamma
     elif funs == 2:
@@ -23,13 +23,13 @@ def gamma_correction(img,gamma=2.2,funs=1,plot=0,save=0,saveFileName = 'gamma'):
     elif funs == 3:
         img_new = 2**x-1
 
-    # 是否绘图
+    # 绘图
     if plot:
         import matplotlib.pyplot as plt
         plt.imshow(img_new)
         plt.show()
 
-    # 是否输出
+    # 输出
     if save:
         from skimage import io  
         io.imsave(str(saveFileName) + ".jpg",img_new)  
