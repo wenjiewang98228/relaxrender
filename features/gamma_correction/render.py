@@ -11,7 +11,8 @@ gamma 函数
 import numpy as np
 
 def gamma_correction(img,gamma=2.2,funs=1,plot=0,save=0,saveFileName = 'gamma'):
-	# 图片预处理 
+	
+    # 图片预处理（归一化 
     xmax = img.max()
     x = img/img.max()
 
@@ -23,13 +24,13 @@ def gamma_correction(img,gamma=2.2,funs=1,plot=0,save=0,saveFileName = 'gamma'):
     elif funs == 3:
         img_new = 2**x-1
 
-    # 绘图
+    # 绘图（若允许）
     if plot:
         import matplotlib.pyplot as plt
         plt.imshow(img_new)
         plt.show()
 
-    # 输出
+    # 输出（若允许）
     if save:
         from skimage import io  
         io.imsave(str(saveFileName) + ".jpg",img_new)  
