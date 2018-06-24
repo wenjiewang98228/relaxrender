@@ -1,12 +1,19 @@
 '''
 gamma 函数
+变量一览
 输入：
-	img   --  输入数据 类型为 array,三维(高度,宽度,3)
-	gamma --  参数值，决定对比度修改程度（仅仅对gamma校正有用）
-	funs  --  调用的校正函数，默认为1为gamma校正，2为log校正，3为inverse log校正
-	plot  --  是否绘图 默认不绘图	
-	save  --  是否输出中间结果，默认为0不输出，其他值为输出
-	saveFileName  --  选择保存图片名字，如果不保存，可以不设置
+	img   --  输入数据 
+	类型为 array,三维(高度,宽度,3)
+	gamma --  参数值
+	决定对比度修改程度（仅仅对gamma校正有用）
+	funs  --  调用的校正函数
+	默认为1为gamma校正，2为log校正，3为inverse log校正
+	plot  --  是否绘图
+	默认不绘图	
+	save  --  是否输出中间结果
+	默认为0不输出，其他值为输出
+	saveFileName  --  选择保存图片名字
+	如果不保存，可以不设置
 '''
 import numpy as np
 
