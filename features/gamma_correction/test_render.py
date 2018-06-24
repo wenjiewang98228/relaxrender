@@ -4,6 +4,7 @@ from skimage import data
 
 
 #以下是对测试类的定义
+#test
 #测试类
 class Test(unittest.TestCase):
 
