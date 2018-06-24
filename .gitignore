@@ -25,5 +25,3 @@ build
 .coverage
 .pytest_cache/
 htmlcov/
-
-output_points.jpg
