@@ -1,0 +1,39 @@
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
+from Cube import *
+from math import *
+
+def distance3D(x, y, z, a, b, c):
+    return sqrt((x - a) * (x - a) + (y - b) * (y - b) + (z - c) * (z - c))
+
+def distance2D(x, y, a, b):
+    return sqrt((x - a) * (x - a) + (y - b) * (y - b))
+
+def beer_s_law(color, raytrace):
+    absorbR = exp(color[0] * (-0.15) * raytrace)
+    absorbG = exp(color[1] * (-0.15) * raytrace)
+    absorbB = exp(color[2] * (-0.15) * raytrace)
+    return[color[0] - absorbR, color[1] - absorbG, color[2] - absorbB ,color[3]]
+
+def beerlaw_render(cube):
+    point=cube.getPoint()
+    length=cube.getLength()
+    color=cube.getColor()
+    
+    startx = point[0] - length / 2
+    starty = point[1] + length / 2
+    startz = point[2] + length / 2
+    l=length/10
+
+    d = 15 - point[2] - length/2
+    
+    for i in range(0,10):
+        for j in range(0,10):
+            for k in range(0,10):
+                rayl = distance3D(startx + k * l, starty - j * l, startz - i * l, 0, 0, 15)
+                raya = distance2D(startx + k * l, startz - i * l, 0, 15)
+                a = 15 - startz - k * l
+                rayoutd = raya * d / a
+                raytrace = rayl * (1.0 - rayoutd / raya)
+
