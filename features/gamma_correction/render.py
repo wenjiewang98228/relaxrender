@@ -42,4 +42,5 @@ def gamma_correction(img,gamma=2.2 ,funs=1 ,plot=0 ,save=0 ,saveFileName = 'gamm
         from skimage import io  
         io.imsave(str(saveFileName) + ".jpg",img_new)  
 
+	
     return img_new
