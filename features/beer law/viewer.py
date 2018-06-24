@@ -3,7 +3,6 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from Sphere import *
 from Cube import *
-from beerlaw import *
 import numpy
 
 red_color = [1.0, 0.0, 0.0, 1.0]
@@ -52,7 +51,6 @@ class Viewer(object):
         cube = Cube(0.9,blue_color,0,0,13.7)
         cube.make()
 
-        beerlaw_render(cube)
 
         glutSwapBuffers()
 
