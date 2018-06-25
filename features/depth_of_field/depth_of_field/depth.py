@@ -19,8 +19,6 @@ def cal_depth(row,col,central,maximum_dep):
 	return distance/maximum_distance*maximum_dep
 
 def depth(img):
-	if type(img)!=np.ndarray:
-		print("TypeError: img is not a ndarray.")
 	dimg = img.copy()
 	dimg = dimg[:, :, :, np.newaxis]
 	'''
@@ -31,8 +29,6 @@ def depth(img):
 	for row_tag in range(rows):
 		for col_tag in range(cols):
 			dimg[row_tag,col_tag,0] = cal_depth(row_tag,col_tag,central,1)*200
-			if dimg[row_tag,col_tag,0]>200:
-				print("Calculate depth data error.")
 			#ndarray can store 256 maximum in a axis
 
 	'''
